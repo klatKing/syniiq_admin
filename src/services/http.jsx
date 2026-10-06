@@ -23,10 +23,10 @@ http.interceptors.response.use(
     if (
       error.response?.status === 401 &&
       !isLoginRequest(error.config) &&
-      window.location.pathname !== "/login"
+      window.location.pathname !== ""
     ) {
       clearSession();
-      window.location.replace("/login");
+      window.location.replace("");
     }
     return Promise.reject(error);
   }
